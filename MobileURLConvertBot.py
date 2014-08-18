@@ -78,6 +78,7 @@ def scanDomains():
       for attempt in range(3):
         try:
           addComment(submission)
+          break
 
         except praw.errors.RateLimitExceeded as e:
           print("Rate limit exceeded. Sleeping for {0} seconds").format(e.sleep_time)
